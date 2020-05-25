@@ -1,12 +1,12 @@
-Shopping cart Microservice
+## Shopping cart Microservice
 
-CAMEL+SPRING BOOT+APACHE KAFKA+MONGO DB
+## CAMEL+SPRING BOOT+APACHE KAFKA+MONGO DB
 
-Overview
-Shoppingcart -Producer
+## Overview
+## Shoppingcart -Producer
 This microservice which will get Post request as json from Rest endpoint.This request will be saved in to Kafka messaging topic called ProductTopic. 
 
-Shoppingcart-Consumer
+## Shoppingcart-Consumer
 This Microservice will listen  from ProductTopic  and the payload request will saved in to Mongo DB.
 
 CAMEL: Camel is open source integration framework that empowers you to quickly and easily integrate various systems consuming or producing data. Using consuming less and smart code is acheived.
@@ -15,7 +15,7 @@ Publish and subscribe to streams of records, similar to a message queue or enter
 Store streams of records in a fault-tolerant durable way.Process streams of records as they occur.
 MONGO DB : Mongo DB is schema less No sql Database
 
-Features in this microservice:
+## Features in this microservice:
 1)Json payload can be posted in any structure,
 2) The payload will be saved in to Kafka topic first as said Kafka is fault tolerant messaging queue, the message will be persist even the Database Mongo db is down. And later the message can be saved in to database  from topic.
 3)If DB down message from topic can be retried(3 times) with certain delay seconds using Camel retry feature and exception can be handled. currently display Failure message.

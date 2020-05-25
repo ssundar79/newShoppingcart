@@ -1,0 +1,26 @@
+
+spring:
+  profiles: 
+    active: mock
+---
+spring:
+  profiles: mock
+  data: 
+   mongodb:
+           database: shoppingcart
+           port: 27018
+           host: localhost
+mongo:
+ timeout: 5000
+kafka: 
+  broker: localhost:9092
+retryable:
+    delayPattern: 1:1000;2:2000
+    count: 2
+    
+server:
+    port: 8091 
+route_host: http://localhost:8092/api/addproduct
+collection: Product
+exceptionRoute: direct:exception
+testRoute: netty-http:http://localhost:8092/api/addproduct
